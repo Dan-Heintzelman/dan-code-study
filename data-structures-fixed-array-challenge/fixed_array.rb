@@ -1,27 +1,23 @@
 class FixedArray
-  attr_accessor :array
+  attr_reader :array
 
   def initialize(size)
     @size = size
     @array = Array.new(size)
   end
 
-  # def length
-  #   @array.length
-  # end
-
   def get(index)
-    raise ("Index out of bounds") unless index < @size && index >= 0
+    raise ("Index out of bounds") unless index_safe?(index)
     @array[index]
   end
 
   def set(index, element)
-    raise ("Index out of bounds") unless index < @size && index >= 0
+    raise ("Index out of bounds") unless index_safe?(index)
     @array[index] = element
   end
 
-  def check_index(index)
-
+  def index_safe?(index)
+    index < @size && index >= 0
   end
 end
 
@@ -29,16 +25,3 @@ end
 # FixedArray.new(size) creates a new array @size elements
 
 # FixedArray.get(index) Get a value from the array at the specified index.
-
-blarb = FixedArray.new(10)
-# blarb(4) returns the element at this index
-# blarb(5, "thing"), should insert "thing" at position 5
-
-# Interface
-# FixedArray.new(size) creates a new array @size elements
-
-# FixedArray.get(index) Get a value from the array at the specified index.
-
-blarb = FixedArray.new(10)
-# blarb(4) returns the element at this index
-# blarb(5, "thing"), should insert "thing" at position 5
