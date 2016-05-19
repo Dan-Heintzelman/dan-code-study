@@ -24,11 +24,23 @@ class ArrayList
     end
   end
 
-    def expand_array
-      @index_count.times do |i|
-        @new_array.set(i, @dynamic_array.get(i))
-      end
+  def get(index)
+    @dynamic_array.get(index)
+  end
+
+  def set(index, element)
+    @dynamic_array.set(index, element)
+  end
+
+  def length
+    @index_count 
+  end
+
+  def expand_array
+    @index_count.times do |i|
+      @new_array.set(i, @dynamic_array.get(i))
     end
+  end
 
 end
 
