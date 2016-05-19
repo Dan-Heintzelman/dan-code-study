@@ -12,7 +12,7 @@ describe FixedArray do
     it "Sets the element in arrray at specified index." do
       # fixedarray = FixedArray.new(4)
       fixedarray.set(0, "Element 0")
-      expect(fixedarray.array[0]).to eq "Element 0"
+      expect(fixedarray.get[0]).to eq "Element 0"
     end
 
     it "Returns the element from array at specified index." do
